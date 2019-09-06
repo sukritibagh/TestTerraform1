@@ -130,13 +130,11 @@ resource "azurerm_virtual_machine" "myterraformvm" {
     os_profile {
         computer_name  = "SukritiTerraformVM"
         admin_username = "SukritiVM"
+	admin_password = "SukritiAdmin"
     }
 
     os_profile_linux_config {
-         disable_password_authentication = true
-        ssh_keys {
-            path     = "/home/azureuser/.ssh/authorized_keys"
-            key_data = "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDDVVqI5DDKiT7EqZkk3JvwJzEXMmkVB5yta7A4NioPvygq4h3+fzr5iu36IDyyCYKbCBKCgWVMUlGiZLwPOFsJ3UKnacM4wrorM5tbvnn2a9UKC3IGmOMOImjD8lI53g2SboPaxbRaUwfVpTUglzZeHKv7kNzlbMHdQB9E8EHB9QeKZWBpCzq1weunJyIwuaEKnzUjWIJUALX8WWqpz19TisMktECMt5GHSLdWPpUjQm3A+2lqvzJspFJuAje59FjZT7y54VBEzKOkIylw2Ewd+MvYrGmv7a1pbegft0WcDaWeI3qhqeEgxKYam3c8m4a6BXBl1hLnmaOPdMPEGHoB"
+         disable_password_authentication = false
         }
     }
 
